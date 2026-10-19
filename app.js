@@ -6,6 +6,7 @@ import ticketRoutes from './routes/tickets.js';
 
 const app = express();
 app.use(cors());
+app.set('trust proxy', 1);
 app.use(express.json({ limit: '100kb' }));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
